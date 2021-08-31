@@ -6,11 +6,14 @@ const routes = [
     path: '/',
     name: 'Home',
     component: TheHome
-  },
-  {
+  }, {
     path: '/basics',
     name: 'Basics',
     component: () => import('../pages/TheBasics.vue') // lazy loaded module
+  }, {
+    path: '/glossary',
+    name: 'Glossary',
+    component: () => import('../pages/TheGlossary.vue')
   }
 ]
 
