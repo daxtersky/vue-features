@@ -1,16 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import TheHome from '../pages/TheHome.vue'
+import TheIntro from '../pages/TheIntro.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: TheHome
+    // name: 'Intro', // not needed because of what?
+    component: TheIntro
   }, {
-    path: '/basics',
-    name: 'Basics',
-    component: () => import('../pages/TheBasics.vue') // lazy loaded module
-  }, {
+    path: '/rendering',
+    component: () => import('@/pages/TheRendering.vue') // lazy loaded module
+  },
+  {
+    path: '/component',
+    component: () => import('@/pages/TheComponent.vue')
+  },
+  {
+    path: '/hooks',
+    component: () => import('@/pages/LifecycleHooks.vue')
+  },
+  {
+    path: '/slots',
+    component: () => import('@/pages/TheSlots.vue')
+  },
+  {
     path: '/glossary',
     name: 'Glossary',
     component: () => import('../pages/TheGlossary.vue')

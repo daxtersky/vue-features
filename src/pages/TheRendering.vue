@@ -1,11 +1,13 @@
 <template>
-    <h1>Basics</h1>
-    <h3>Declarative rendering</h3>
+    <h1>Declarative rendering</h1>
     <p>Just like in Angular, Vue allows to declaratively render data in the DOM with template syntax. </p>
     <p>This is rendered text {{ renderedString }} placed between double braces: { { <u>variable-here</u> } } thanks to text interpolation.</p>
     <p>Now, we can also change our data with special HTML attributes:</p>
     <p class="term">
-      <strong>Directive</strong> - attributes with prefix <code>v:</code> provided by Vue, apply special behaviour to the rendered DOM.
+      <strong>Directive</strong>
+      <span>
+       - attributes with prefix <code>v:</code> provided by Vue, apply special behaviour to the rendered DOM.
+      </span>
     </p>
     <h3>Conditionals and loops</h3>
     <ul>
@@ -24,6 +26,8 @@
     </ul>
     <h3>Other</h3>
     <ul>
+      <li><code>v-html</code></li>
+      <li><code>v-once</code></li>
       <li>...</li>
     </ul>
 </template>
