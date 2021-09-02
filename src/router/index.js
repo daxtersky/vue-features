@@ -11,8 +11,8 @@ const routes = [
     component: () => import('@/pages/TheRendering.vue') // lazy loaded module
   },
   {
-    path: '/component',
-    component: () => import('@/pages/TheComponent.vue')
+    path: '/components',
+    component: () => import('@/pages/TheComponents.vue')
   },
   {
     path: '/hooks',

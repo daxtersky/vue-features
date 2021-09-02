@@ -4,9 +4,10 @@
     <div class="nav__links">
       <router-link class="nav__link link" to="/">Intro</router-link>
       <router-link class="nav__link link" to="/rendering">Rendering</router-link>
-      <router-link class="nav__link link" to="/component">Component</router-link>
+      <router-link class="nav__link link" to="/components">Components</router-link>
       <router-link class="nav__link link" to="/hooks">Lifecycle hooks</router-link>
       <router-link class="nav__link link" to="/slots">Slots</router-link>
+      <router-link class="nav__link link" to="/router">Router</router-link>
 
       <router-link class="nav__link link" to="/glossary">Glossary</router-link>
     </div>

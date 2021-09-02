@@ -17,11 +17,14 @@
     <h3>Loops</h3>
       <ul>
         <li><code>v:for</code> - to loop through a list of items (in array for example)</li>
+        <li>Always remember to add <code>v:key</code> directive, because each item should have unique key.</li>
       </ul>
     <h3>Events</h3>
     <ul>
       <li><code>v:on</code> - event listener</li>
     </ul>
+    <button class="button" v-on:click="onClick">Button</button>
+    <span v-if="isButtonClicked" class="pl-5">Button is clicked!</span>
     <h3>v:model</h3>
     <ul>
       <li><code>v:model</code> - a common feature with Angular: double binding!</li>
@@ -49,12 +52,21 @@
 export default {
   data: function () {
     return {
-      renderedString: 'rendered Hello World!'
+      renderedString: 'rendered Hello World!',
+      isButtonClicked: false
+    }
+  },
+  methods: {
+    onClick () {
+      this.isButtonClicked = true
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.pl-5 {
+  padding-left: 5px;
+}
 
 </style>
