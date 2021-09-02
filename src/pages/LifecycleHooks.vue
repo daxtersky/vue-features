@@ -1,7 +1,7 @@
 <template>
   <h1>Lifecycle hooks</h1>
   <p>Lifecycle hooks are functions that are called in different phases of the component life.</p>
-  <ul>
+  <ol>
     <li>Before create - is conveived by it' parents ;)</li>
     <li>Created - all injections are accesible now</li>
     <li>Before mount</li>
@@ -10,7 +10,7 @@
     <li>Updated - when data changes, after re-render</li>
     <li>Before unmount</li>
     <li>Unmounted</li>
-  </ul>
+  </ol>
   <p>Check your browser's console to see all the components lifecycle hooks.</p>
 </template>
 
