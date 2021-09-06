@@ -23,6 +23,10 @@ const routes = [
     component: () => import('@/pages/TheSlots.vue')
   },
   {
+    path: '/vue-router',
+    component: () => import('@/pages/VueRouter.vue')
+  },
+  {
     path: '/glossary',
     name: 'Glossary',
     component: () => import('../pages/TheGlossary.vue')

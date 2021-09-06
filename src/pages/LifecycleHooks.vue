@@ -1,6 +1,8 @@
 <template>
   <h1>Lifecycle hooks</h1>
-  <p>Lifecycle hooks are functions that are called in different phases of the component life.</p>
+  <p>Lifecycle hooks are functions that are called at different stages of the component life.
+    With them it's possible to know when the component is created, added to the DOM, updated or removed.
+  </p>
   <ol>
     <li>Before create - is conveived by it' parents ;)</li>
     <li>Created - all injections are accesible now</li>
