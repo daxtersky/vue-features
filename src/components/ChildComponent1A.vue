@@ -1,8 +1,9 @@
 <template>
   <div class="wrapper">
     <p>{{ regionName }}</p>
-    <p>population {{ regionInfo.population }}</p>
-    <p>taxes {{ regionInfo.taxes }}%</p>
+    <p>Tax level {{ regionTaxes }}%</p>
+    <button @click="$emit('weWantTaxesLower')">Lower taxes</button>
+    <p>population {{ population }}</p>
   </div>
 </template>
 
@@ -10,16 +11,15 @@
 export default {
   props: {
     regionName: String,
-    regionInfo: Object
+    regionTaxes: Number,
+    population: Number
   }
-  // created: function () {
-  //   console.log('region-info?', this.regionInfo)
-  // }
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
+  text-align: center;
   color: $white-smoke;
   background-color: $medium-sea-green;
 }

@@ -16,15 +16,16 @@
 
   <h3>Communication between components</h3>
   <ol>
-    <li>Parent - child</li>
+    <li>
+      <p>Parent - child</p>
+      <div class="components-wrapper">
+        <ParentComponent1 country="Poland"/>
+      </div>
+      </li>
     <li>Siblings</li>
     <li>Grandparent - child</li>
   </ol>
   <p></p>
-
-  <div class="components-wrapper">
-    <ParentComponent1 country="Poland"/>
-  </div>
 
 </template>
 
