@@ -1,10 +1,23 @@
 <template>
   <div class="parent">
     <p>{{ country }}</p>
-    <button @click="raiseTaxes">Raise taxes!</button>
-    <p>Taxes {{ taxes }}%</p>
+    <div class="one-line">
+      <button class="button" @click="raiseTaxes">Raise taxes!</button>
+      <p>Taxes {{ taxes }}%</p>
+    </div>
+    <div class="one-line">
+      <button class="button" @click="lowerBenefits">Lower benefits!</button>
+      <p>child benefit {{ familySituation.childBenefit }} PLN, population {{ familySituation.population }}</p>
+    </div>
     <div class="children">
-      <child-component-1a class="child-component" region-name="Kashubia" :region-taxes="taxes" :population="population" v-on:weWantTaxesLower="lowerTaxes" />
+      <child-component-1a
+        class="child-component"
+        region-name="Kashubia"
+        :region-taxes="taxes"
+        :familySituation="familySituation"
+        v-on:weWantTaxesLower="lowerTaxes"
+        @weWantMoreBenefits="raiseBenefits"
+      />
     </div>
   </div>
 </template>
@@ -20,7 +33,10 @@ export default {
   data () {
     return {
       taxes: 19,
-      population: 550000
+      familySituation: {
+        childBenefit: 500,
+        population: 550000
+      }
     }
   },
   methods: {
@@ -29,6 +45,14 @@ export default {
     },
     lowerTaxes () {
       this.taxes--
+    },
+    raiseBenefits () {
+      this.familySituation.childBenefit += 100
+      this.familySituation.population += (this.familySituation.childBenefit * 50)
+    },
+    lowerBenefits () {
+      this.familySituation.childBenefit -= 100
+      this.familySituation.population -= (this.familySituation.childBenefit * 50)
     }
   }
 }
@@ -37,14 +61,13 @@ export default {
 <style lang="scss" scoped>
 .parent {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  padding: 4px;
   min-width: 550px;
   color: $white-smoke;
   font-weight: 800;
   background-color: $madison;
 }
-
 .children {
   height: 100%;
   width: 100%;
@@ -55,7 +78,7 @@ export default {
 .child-component {
   font-size: 14px;
   padding: 8px;
-  width: 170px;
+  // width: 240px;
 }
 
 </style>

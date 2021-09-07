@@ -17,13 +17,13 @@
   <h3>Communication between components</h3>
   <ol>
     <li>
-      <p>Parent - child</p>
+      <p><strong>Parent-child</strong> - with one-way-down binding, so only parent component updates shared properties. Child can emit an event to be envoked in a parent.</p>
       <div class="components-wrapper">
         <ParentComponent1 country="Poland"/>
       </div>
       </li>
-    <li>Siblings</li>
-    <li>Grandparent - child</li>
+    <li><strong>Siblings</strong></li>
+    <li><strong>Grandparent-child</strong></li>
   </ol>
   <p></p>
 

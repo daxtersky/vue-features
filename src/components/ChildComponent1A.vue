@@ -1,9 +1,17 @@
 <template>
   <div class="wrapper">
-    <p>{{ regionName }}</p>
-    <p>Tax level {{ regionTaxes }}%</p>
-    <button @click="$emit('weWantTaxesLower')">Lower taxes</button>
-    <p>population {{ population }}</p>
+    <p class="center">{{ regionName }}</p>
+    <div class="one-line">
+      <button class="button" @click="lowerTaxes">Lower taxes</button>
+      <p>Tax level {{ regionTaxes }}%</p>
+    </div>
+    <div class="one-line">
+      <button class="button" @click="$emit('weWantMoreBenefits')">Raise benefits</button>
+      <div class="one-row">
+        <p>child benefit {{ childBenefitPln }}</p>
+        <p>population {{ familySituation.population }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,14 +20,23 @@ export default {
   props: {
     regionName: String,
     regionTaxes: Number,
-    population: Number
+    familySituation: Object
+  },
+  methods: {
+    lowerTaxes (val) {
+      this.$emit('weWantTaxesLower', val)
+    }
+  },
+  computed: {
+    childBenefitPln: function () {
+      return `${this.familySituation.childBenefit} PLN`
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
-  text-align: center;
   color: $white-smoke;
   background-color: $medium-sea-green;
 }
